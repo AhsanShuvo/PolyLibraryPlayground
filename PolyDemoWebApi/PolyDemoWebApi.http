@@ -1,0 +1,6 @@
+@PolyDemoWebApi_HostAddress = http://localhost:5224
+
+GET {{PolyDemoWebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
