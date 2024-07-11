@@ -19,9 +19,8 @@ public class PollyRetryClientController: ControllerBase
     public async Task<IActionResult> Get()
     {
         var client = _httpClientFactory.CreateClient("WeatherForecastClient");
-
-        var response = await client.GetAsync("api/WeatherForecast");
-        
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/WeatherForecast");
+        var response = await client.SendAsync(request);
         if (response.IsSuccessStatusCode)
         {
             var content =  await response.Content.ReadAsStringAsync();
