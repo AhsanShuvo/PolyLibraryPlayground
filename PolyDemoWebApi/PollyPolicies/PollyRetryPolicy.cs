@@ -9,7 +9,11 @@ public static class PollyRetryPolicy
     {
         return HttpPolicyExtensions
             .HandleTransientHttpError() // handles 5XX, 408, Network Error
-           // .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.InternalServerError)
-            .WaitAndRetryAsync(2, retryAttempt => TimeSpan.FromMilliseconds(10));
+            .WaitAndRetryAsync(2, retryAttempt => TimeSpan.FromMilliseconds(10),
+                onRetry: (outcome, timespan, retryAttempt, context) =>
+                {
+                    context["RetryAttempt"] = retryAttempt;
+                    Console.WriteLine($"retry attempt = {retryAttempt}");
+                });
     }
 }

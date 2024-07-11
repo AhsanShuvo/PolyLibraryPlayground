@@ -1,5 +1,4 @@
-using Polly;
-using Polly.Retry;
+using PolyDemoWebApi.Middlewares;
 using PolyDemoWebApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCustomRateLimiter();
+builder.Services.AddTransient<WeatherForecastRetryHandler>();
 builder.Services.AddWeatherForecastClient();
 
 var app = builder.Build();

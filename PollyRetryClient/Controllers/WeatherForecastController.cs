@@ -21,6 +21,11 @@ public class WeatherForecastController: ControllerBase
     [HttpGet]
     public IActionResult Get()
     {
+        if (!Request.Headers.TryGetValue("X-Retry-Attempt", out var retryAttempt))
+        {
+            throw new Exception("Deliberately throwing exception for first request for retry operation");
+        }
+        
         List<int> temp = new List<int>{ 2, 3, 4, 5, 6 };
         var ans = temp.Take(3).Concat(temp.Skip(3)).ToList();
         var response = Enumerable.Range(1, 5).Select(index => new WeatherForecast
