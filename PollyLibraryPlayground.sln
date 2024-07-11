@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyDemoWebApi", "PolyDemoWebApi\PolyDemoWebApi.csproj", "{308C860A-86E9-438A-B047-FE6888374EB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PollyRetryClient", "PollyRetryClient\PollyRetryClient.csproj", "{35BD114A-D27B-4209-AB0E-77FD2A0FF2CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{308C860A-86E9-438A-B047-FE6888374EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{308C860A-86E9-438A-B047-FE6888374EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{308C860A-86E9-438A-B047-FE6888374EB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35BD114A-D27B-4209-AB0E-77FD2A0FF2CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35BD114A-D27B-4209-AB0E-77FD2A0FF2CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35BD114A-D27B-4209-AB0E-77FD2A0FF2CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35BD114A-D27B-4209-AB0E-77FD2A0FF2CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

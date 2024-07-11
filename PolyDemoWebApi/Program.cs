@@ -1,3 +1,5 @@
+using Polly;
+using Polly.Retry;
 using PolyDemoWebApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,12 +10,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCustomRateLimiter();
+builder.Services.AddWeatherForecastClient();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
